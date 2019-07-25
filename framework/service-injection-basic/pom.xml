@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>service-injection-basic</artifactId>
+	<name>Basic start dependency for the Service Injection Framework</name>
+	<description>Basic all-in-one dependency, use this in the runable project as dependency. It includs the implementation of the framework runtime, basic components and basic services</description>
+	<parent>
+		<groupId>io.github.legion2</groupId>
+		<artifactId>service-injection-framework</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>io.github.legion2</groupId>
+			<artifactId>service-injection</artifactId>
+			<version>1.0.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.github.legion2</groupId>
+			<artifactId>service-injection-bootstrap</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.legion2</groupId>
+			<artifactId>deployment-descriptor-generator</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.legion2</groupId>
+			<artifactId>service-injection-logger</artifactId>
+			<version>1.0.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.auto.service</groupId>
+			<artifactId>auto-service</artifactId>
+			<version>1.0-rc5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+	</dependencies>
+</project>

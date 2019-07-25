@@ -1,0 +1,22 @@
+target/
+bin/
+.classpath
+.project
+org.eclipse.core.resources.prefs
+
+*.xml.tag
+*.xml.releaseBackup
+*.xml.versionsBackup
+*.xml.next
+dependency-reduced-pom.xml
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+
+#Ignore config files
+*.properties
+!**/META-INF/*.properties
+
+#Include docker and dev configs
+!.docker/config/**
+!.dev/config/**

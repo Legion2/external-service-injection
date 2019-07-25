@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: tomcat:9-jre8
+    ports:
+      - "8080:8080"
+    environment:
+      TOSCA_SERVICE_MANAGER_CONFIG_FILE: /usr/local/tomcat/conf/tosca-service-manager.properties
+    volumes:
+      - ./target/demo-servlet-1.0.0.war:/usr/local/tomcat/webapps/demo-servlet.war:ro
+      - ./tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro
+      - ./tomcat/context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml:ro
+      - ./tosca-service-manager.properties:/usr/local/tomcat/conf/tosca-service-manager.properties:ro
+      - ./TOSCAServices.xml:/usr/local/tomcat/conf/TOSCAServices.xml:ro

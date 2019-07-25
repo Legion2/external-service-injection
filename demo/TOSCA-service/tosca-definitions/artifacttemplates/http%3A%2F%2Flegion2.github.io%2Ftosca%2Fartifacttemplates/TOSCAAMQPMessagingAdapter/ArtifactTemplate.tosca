@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://legion2.github.io/tosca/artifacttemplates" id="winery-defs-for_ateIgeneral-TOSCAAMQPMessagingAdapter" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12">
+    <ArtifactTemplate name="TOSCAAMQPMessagingAdapter" type="atyIgeneral:JavaExternalServiceAdapter" id="TOSCAAMQPMessagingAdapter" xmlns:atyIgeneral="http://legion2.github.io/tosca/artifacttypes">
+        <ArtifactReferences>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Flegion2.github.io%252Ftosca%252Fartifacttemplates/TOSCAAMQPMessagingAdapter/files/tosca-amqp-service-adapter.jar"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>

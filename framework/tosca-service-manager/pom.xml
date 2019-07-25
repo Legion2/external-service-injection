@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tosca-service-manager</artifactId>
+	<name>TOSCA Service Manager</name>
+	<description>The service injection extension to inject TOSCA service adapters</description>
+	<parent>
+		<groupId>io.github.legion2</groupId>
+		<artifactId>service-injection-framework</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.auto.service</groupId>
+			<artifactId>auto-service</artifactId>
+			<version>1.0-rc5</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.github.OpenTOSCA</groupId>
+			<artifactId>container-client</artifactId>
+			<version>e84cf76a83e2f0470f0d7e78adf2b405cf0f5aea</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.legion2</groupId>
+			<artifactId>service-injection-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.1</version>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+</project>

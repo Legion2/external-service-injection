@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" 
+    xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://legion2.github.io/tosca/servicetemplates" id="winery-defs-for_steIgeneral-Calculator-Backend">
+    <ServiceTemplate name="Calculator-Backend" targetNamespace="http://legion2.github.io/tosca/servicetemplates" id="Calculator-Backend">
+        <BoundaryDefinitions>
+            <Properties>
+                <Properties>
+                    <calculator.uri/>
+                </Properties>
+                <PropertyMappings>
+                    <PropertyMapping serviceTemplatePropertyRef="//*[local-name()='calculator.uri']" targetObjectRef="DockerContainer" targetPropertyRef="concat('http://35.246.250.187:',DockerContainer.Properties.Port)"/>
+                </PropertyMappings>
+            </Properties>
+        </BoundaryDefinitions>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerEngine" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine" id="DockerEngine" winery:x="352" winery:y="485">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DockerEngineURL>tcp://dind:2375</DockerEngineURL>
+                        <State>Running</State>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer" id="DockerContainer" winery:x="352" winery:y="112">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>9995</Port>
+                        <ContainerPort>8080</ContainerPort>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:artifacttypes="http://opentosca.org/artifacttypes"
+                        xmlns:ateIgeneral="http://legion2.github.io/tosca/artifacttemplates" name="Calculator_Backend_DA" artifactType="artifacttypes:DockerContainerArtifact" artifactRef="ateIgeneral:Calculator_Backend_DA"/>
+                    <DeploymentArtifact xmlns:atyIgeneral="http://legion2.github.io/tosca/artifacttypes" 
+                        xmlns:ateIgeneral="http://legion2.github.io/tosca/artifacttemplates" name="JavaAdapterImplementation" artifactType="atyIgeneral:JavaExternalServiceAdapter" artifactRef="ateIgeneral:TOSCACalculatorAdapter"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="con_1" type="ToscaBaseTypes:HostedOn" id="con_1">
+                <SourceElement ref="DockerContainer"/>
+                <TargetElement ref="DockerEngine"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
